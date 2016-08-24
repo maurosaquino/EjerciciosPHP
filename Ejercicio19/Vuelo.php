@@ -92,7 +92,7 @@ class Vuelo{
 	}
 
 
-	//Crear el método de clase “Add” para que permita sumar dos vuelos. El valor devuelto deberá ser de tipo numérico, y representará el valor recaudado por los vuelos. Tener en cuenta que si un pasajero es Plus, se le hará un descuento del 20% en el precio del vuelo.
+	//Crear el método de clase “Add” para que permita sumar dos vuelos. El valor devuelto deberá ser de tipo numérico, y representará el valor recaudado por los vuelos. Tener en cuenta que si un pasajero es Plus, se le hará un descuento del 20% en el precio del vuelo. (No toma todos los del Vuelo 2 - PREGUNTAR)
 
 	static function Add($vuelo1, $vuelo2){
 
@@ -104,42 +104,69 @@ class Vuelo{
 
 			if($pasajerov1->GetEsPlus() == True){
 
-				$totalrecaudado = $totalrecaudado + ($preciovuelo1 * 1);
+				$totalrecaudado = $totalrecaudado + ($preciovuelo1 * 0.80);
 
-				echo $pasajerov1->GetNombre();
+				echo $pasajerov1->GetNombre() . " ".  $totalrecaudado;
 
 			} else {
 
 				$totalrecaudado = $totalrecaudado + $preciovuelo1;
 
-				echo $pasajerov1->GetNombre();
+				echo $pasajerov1->GetNombre() . " " . $totalrecaudado;
 			}
 		}
 
-		foreach ($vuelo2->_listaDePasajeros as $pasajerov2){
+		foreach ($vuelo2->_listaDePasajeros as $pasajeros){
 
-			if($pasajerov2->GetEsPlus() == True){
+			if($pasajeros->GetEsPlus() == True){
 
-				$totalrecaudado = $totalrecaudado + ($preciovuelo2 * 1);
+				$totalrecaudado = $totalrecaudado + ($preciovuelo2 * 0.80);
 
-				echo $pasajerov2->GetNombre();
+				echo $pasajeros->GetNombre() . " " . $totalrecaudado;
 
 			} else {
 
 				$totalrecaudado = $totalrecaudado + $preciovuelo2;
 
-				echo $pasajerov2->GetNombre();
+				echo $pasajeros->GetNombre() . " " . $totalrecaudado;
 
 			}
 
 			return $totalrecaudado;
 
 		}
-	
-
 	}
 
-}
+	//Crear el método de clase “Remove”, que permite quitar un pasajero de un vuelo, siempre y cuando el pasajero esté en dicho vuelo, caso contrario, informarlo. El método retornará un objeto de tipo Vuelo. (El Unset no lo remueve - PREGUNTAR)
 
+	static function Remove($vuelo,$pasajero){
+
+	$validar = FALSE;
+	$posicion = 0;
+
+		foreach ($vuelo->_listaDePasajeros as $indice => $pasajerosenlista){
+
+		if	($pasajerosenlista->Equals($pasajero)){
+
+			
+			$validar = TRUE;
+			$posicion = $indice;
+			unset($vuelo1->_listaDePasajeros[$posicion]);
+
+			break;
+		}		
+		}
+
+		if ($validar == TRUE){
+
+			echo "El pasajero ha sido removido exitosamente";
+
+		}else{
+
+			echo "No se encontró el pasajero en el vuelo";
+		}
+
+	}
+}
 
 ?>
