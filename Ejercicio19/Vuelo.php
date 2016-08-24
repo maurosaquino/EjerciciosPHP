@@ -137,7 +137,7 @@ class Vuelo{
 		}
 	}
 
-	//Crear el método de clase “Remove”, que permite quitar un pasajero de un vuelo, siempre y cuando el pasajero esté en dicho vuelo, caso contrario, informarlo. El método retornará un objeto de tipo Vuelo. (El Unset no lo remueve - PREGUNTAR)
+	//Crear el método de clase “Remove”, que permite quitar un pasajero de un vuelo, siempre y cuando el pasajero esté en dicho vuelo, caso contrario, informarlo. El método retornará un objeto de tipo Vuelo. 
 
 	static function Remove($vuelo,$pasajero){
 
@@ -151,7 +151,7 @@ class Vuelo{
 			
 			$validar = TRUE;
 			$posicion = $indice;
-			unset($vuelo1->_listaDePasajeros[$posicion]);
+			unset($vuelo->_listaDePasajeros[$posicion]);
 
 			break;
 		}		
