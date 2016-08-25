@@ -8,9 +8,9 @@
 
 //Aplicación N3: OBTENER EL VALOR DEL MEDIO
 
-$a  = 2;
-$b  = 2;
-$c  = 3;
+$a  = rand (1,50);
+$b  = rand (1,50);
+$c  = rand (1,50);
 
 echo "Aqui comienza la ejecución de la <B>Aplicacion N3: Obetener el valor del medio</B>, los valores son $a $b $c:<br>";
 
@@ -61,38 +61,48 @@ echo "Fin de la ejecución de <B>Aplicacion N3</B> <br>";
 
 //Aplicación N4: CALCULADORA
 
-$op  = '/';
-$num1 = 3;
-$num2 = 3;
+$op  = '+';
+$num1 = rand (1,50);
+$num2 = rand (1,50);
 
-echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N4: CALCULADORA</B>, los valores son $num1 $num2 el operador es $op:<br>";
+echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N4: CALCULADORA</B>, los valores son $num1 $num2:<br>";
 
-if ($op == '*'){
+for ($x=0;$x<4;$x++){
 
-	echo "Resultado de la multiplicación: " . $num1*$num2 . "<br>";
+	if ($op == '*'){
+
+	echo "El operador es * <br> Resultado de la multiplicación: " . $num1*$num2 . "<br>";
+	
+	$op='/';
 
 	}elseif($op=='+'){
 
-	echo "Resultado de la suma: " . $num1+$num2 . "<br>";
-
+	echo "El operador es + <br> Resultado de la suma: " . ($num1+$num2) . "<br>";
+	
+	$op='-';
+	
 	}elseif($op=='/'){
 	
-	echo "Resultado de la division: " . $num1/$num2 . "<br>";
+	echo "El operador es / <br> Resultado de la division: " . round($num1/$num2,2) . "<br>";
+	
+	$op='+';
 
 	}elseif($op=='-'){
 
-	echo "Resultado de la resta: " . $num1-$num2 . "<br>";
+	echo "El operador es - <br> Resultado de la resta: " . ($num1-$num2) . "<br>";
+	$op='*';
 
 	}else{
 
 	echo "Error, operador no valido<br>";
+	}
 }
 
 echo "Fin de la ejecución de <B>Aplicacion N4</B> <br>";
 
 //APLICACION N5:NUMEROS EN LETRAS transformar numeros ente 20 y 60 en letras
 
-$num = 20;
+$num = rand (10,70);
 $array = array();
 
 //str_split separa cada numero en una posición del array
@@ -225,6 +235,123 @@ while($valor<=9){
 
 echo "<br>Fin de la ejecución de <B>Aplicacion N7</B> <br>";
 
+
+//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+
+
+echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N11: POTENCIAS DE NUMEROS</B>: <br>";
+
+echo "Fin de la ejecución de <B>Aplicacion N1</B> <br>";
+
+//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+
+
+echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N12: INVERTIR PALABRA</B>: <br>";
+
+echo "Fin de la ejecución de <B>Aplicacion N1</B> <br>";
+
+//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+
+
+
+
+echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N13: RETORNAR PALABRA</B>";
+
+$palabra_rand1  = 'Incorrecta';
+$palabra_rand2  = 'NoSirve';
+$palabra_rand3  = 'MalaPalabra';
+$palabra_corr1 	= 'Recuperatorio';
+$palabra_corr2 	= 'Parcial';
+$palabra_corr3	= 'Programacion';
+$max 			= rand (1,20);
+$numerotrece 	= rand(1,6);
+
+	function ValidaPalabra($palabra, $max){
+
+		if (strlen($palabra)>$max){
+
+			echo "La palabra supera los caracteres permitidos";
+			return 0;
+		} elseif ($palabra == 'Programacion' || $palabra == 'Parcial' || $palabra == 'Recuperatorio') {
+			return 1;
+		}else{
+			return 0;
+		}
+
+	}
+
+
+	switch ($numerotrece){
+		case 1: 
+		echo ". La palabra es $palabra_rand1 :<br>";
+		$booleantrece = ValidaPalabra($palabra_rand1, $max);
+		echo "Numero Devuelto: $booleantrece";
+		break;
+		case 2: 
+		echo ". La palabra es $palabra_rand2 :<br>";
+		$booleantrece = ValidaPalabra($palabra_rand2, $max);
+		echo "Numero Devuelto: $booleantrece";
+		break;
+		case 3: 
+		echo ". La palabra es $palabra_rand3: <br>";
+		$booleantrece = ValidaPalabra($palabra_rand3, $max);
+		echo "Numero Devuelto: $booleantrece";
+		break;
+		case 4: 
+		echo ". La palabra es $palabra_corr1 :<br>";
+		$booleantrece = ValidaPalabra($palabra_corr1, $max);
+		echo "Numero Devuelto: $booleantrece";
+		break;
+		case 5: 
+		echo ". La palabra es $palabra_corr2 :<br>";
+		$booleantrece = ValidaPalabra($palabra_corr2, $max);
+		echo "Numero Devuelto: $booleantrece";
+		break;
+		case 6: 
+		echo ". La palabra es $palabra_corr1: <br>";
+		$booleantrece = ValidaPalabra($palabra_corr3, $max);
+		echo "Numero Devuelto: $booleantrece";
+		break;
+	}
+
+	echo "<br>Los caracteres maximos para esta palabra son $max<br>";
+
+
+echo "Fin de la ejecución de <B>Aplicacion N13</B> <br>";
+
+
+//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+
+$numero = rand(1,50);
+$boolean;
+
+echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N14: PAR E IMPAR</B>, el numero es $numero: <br>";
+
+	function esPar($num) {
+
+
+			if($num % 2 == 0 )
+			{ 
+				return TRUE;
+			}
+
+			return FALSE;
+	}
+	
+	$boolean = esPar($numero);
+	
+	if ($boolean == TRUE){
+
+		echo "El numero es PAR<br>";
+
+		}
+
+		else{ 
+
+		echo "El numero es IMPAR<br>";
+	}
+
+echo "Fin de la ejecución de <B>Aplicacion N14</B> <br>";
 
 
 ?>
