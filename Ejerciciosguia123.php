@@ -238,21 +238,83 @@ echo "<br>Fin de la ejecución de <B>Aplicacion N7</B> <br>";
 
 //APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
 
+$numonce = rand(1,10);
 
 echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N11: POTENCIAS DE NUMEROS</B>: <br>";
 
+function Potencias($num){
+
+	echo "Numero $num elevado al cuadrado  :" . pow($num, 2). ".<br>";
+	echo "Numero $num elevado al cubo      :" . pow($num, 3). ".<br>";
+	echo "Numero $num elevado a la cuarta  :" . pow($num, 4). ".<br>";
+	echo "Numero $num elevado a la quinta  :" . pow($num, 5). ".<br>";
+
+}
+
+echo "El numero es $numonce: <br>";
+Potencias($numonce);
+
 echo "Fin de la ejecución de <B>Aplicacion N1</B> <br>";
 
-//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+//APLICACION  N12: INVERTIR LA PALABRA
 
 
 echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N12: INVERTIR PALABRA</B>: <br>";
 
-echo "Fin de la ejecución de <B>Aplicacion N1</B> <br>";
+function InvertirPalabra($palabra){
 
-//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+	$arraydoce = array();
+	$lenght = strlen($palabra);
+	$arraydoce = str_split($palabra);
+	
+	for ($x=0;$x<$lenght;$x++){
 
+		echo  $arraydoce[(($lenght-1)-$x)];
 
+	}
+
+ return;
+
+}
+
+$palabra_rand1  = 'HOLA';
+$palabra_rand2  = 'JUANCHO';
+$palabra_rand3  = 'MARIA';
+$palabra_corr1 	= 'RAMON';
+$palabra_corr2 	= 'SURFISTA';
+$palabra_corr3	= 'NEUQUEN';
+$numerodoce 	= rand(1,6);
+
+switch ($numerodoce){
+		case 1: 
+		echo "La palabra es $palabra_rand1. Invertida:";
+		InvertirPalabra($palabra_rand1);
+		break;
+		case 2: 
+		echo "La palabra es $palabra_rand2. Invertida:";
+		echo InvertirPalabra($palabra_rand2);
+		break;
+		case 3: 
+		echo "La palabra es $palabra_rand3. Invertida:";
+		InvertirPalabra($palabra_rand3);
+		break;
+		case 4: 
+		echo "La palabra es $palabra_corr1. Invertida:";
+		InvertirPalabra($palabra_corr1);
+		break;
+		case 5: 
+		echo "La palabra es $palabra_corr2. Invertida:";
+		InvertirPalabra($palabra_corr2);
+		break;
+		case 6: 
+		echo "La palabra es $palabra_corr3. Invertida:";
+		InvertirPalabra($palabra_corr3);
+		break;
+	}
+
+echo "<br>Fin de la ejecución de <B>Aplicacion N12</B> <br>";
+
+//APLICACION  N13: VALIDAR Y DEVOLVER PALABRA
 
 
 echo "<br>Aqui comienza la ejecución de la <B>Aplicacion N13: RETORNAR PALABRA</B>";
@@ -270,57 +332,54 @@ $numerotrece 	= rand(1,6);
 
 		if (strlen($palabra)>$max){
 
-			echo "La palabra supera los caracteres permitidos";
+			echo "ERROR: La palabra supera los caracteres permitidos.<br>";
 			return 0;
 		} elseif ($palabra == 'Programacion' || $palabra == 'Parcial' || $palabra == 'Recuperatorio') {
 			return 1;
 		}else{
 			return 0;
 		}
-
 	}
-
 
 	switch ($numerotrece){
 		case 1: 
-		echo ". La palabra es $palabra_rand1 :<br>";
+		echo "<br>La palabra es $palabra_rand1 :<br>";
 		$booleantrece = ValidaPalabra($palabra_rand1, $max);
 		echo "Numero Devuelto: $booleantrece";
 		break;
 		case 2: 
-		echo ". La palabra es $palabra_rand2 :<br>";
+		echo "<br>La palabra es $palabra_rand2 :<br>";
 		$booleantrece = ValidaPalabra($palabra_rand2, $max);
 		echo "Numero Devuelto: $booleantrece";
 		break;
 		case 3: 
-		echo ". La palabra es $palabra_rand3: <br>";
+		echo "<br>La palabra es $palabra_rand3: <br>";
 		$booleantrece = ValidaPalabra($palabra_rand3, $max);
 		echo "Numero Devuelto: $booleantrece";
 		break;
 		case 4: 
-		echo ". La palabra es $palabra_corr1 :<br>";
+		echo "<br>La palabra es $palabra_corr1 :<br>";
 		$booleantrece = ValidaPalabra($palabra_corr1, $max);
 		echo "Numero Devuelto: $booleantrece";
 		break;
 		case 5: 
-		echo ". La palabra es $palabra_corr2 :<br>";
+		echo "<br>La palabra es $palabra_corr2 :<br>";
 		$booleantrece = ValidaPalabra($palabra_corr2, $max);
 		echo "Numero Devuelto: $booleantrece";
 		break;
 		case 6: 
-		echo ". La palabra es $palabra_corr1: <br>";
+		echo "<br>La palabra es $palabra_corr1: <br>";
 		$booleantrece = ValidaPalabra($palabra_corr3, $max);
 		echo "Numero Devuelto: $booleantrece";
 		break;
 	}
 
-	echo "<br>Los caracteres maximos para esta palabra son $max<br>";
-
+echo "<br>Los caracteres maximos para esta palabra son $max<br>";
 
 echo "Fin de la ejecución de <B>Aplicacion N13</B> <br>";
 
 
-//APLICACION  N11: Mostrar las primeras cuatro potencias del 1 al 4
+//APLICACION  N14: Funcion de numero par o impar
 
 $numero = rand(1,50);
 $boolean;
