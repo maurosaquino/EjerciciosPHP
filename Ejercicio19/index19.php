@@ -36,7 +36,7 @@ echo "--------------------------------------------------------------<br>";
 
 $vuelo1->AgregarPasajero($pasajero1);
 $vuelo1->AgregarPasajero($pasajero2);
-$vuelo1->AgregarPasajero($pasajero3);
+$vuelo2->AgregarPasajero($pasajero3);
 $vuelo2->AgregarPasajero($pasajero4);
 $vuelo2->AgregarPasajero($pasajero5);
 

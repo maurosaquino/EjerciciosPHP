@@ -53,7 +53,6 @@ class Vuelo{
 
 		if	($pasajerosenlista->Equals($pasajero)){
 
-			echo "El pasajero ya esta en  el vuelo <br>";
 			$validar = True;
 			break;
 		}
@@ -65,14 +64,13 @@ class Vuelo{
 		if($validar==False && $this->_cantMaxima > $cantpasajeros){
 
 			$this->_listaDePasajeros[] = $pasajero;
-			echo "El pasajero ha sido agregado satisfactoriamente <br>";
-
+			echo "El pasajero ". $pasajero->GetApellido() . ", ".$pasajero->GetNombre() ." fue añadido.<br>";
 
 		} elseif ($this->_cantMaxima >= $cantpasajeros) {
 
 			echo "El pasajero ". $pasajero->GetApellido() . ", ". $pasajero->GetNombre() . " no se ha podido agregar debido al cupo maximo";
 		} else {
-			echo "El pasajero no se pudo agregar.";
+			echo "El pasajero no se pudo agregar debido a que ya esta en el vuelo.";
 		}
 	}
 
@@ -88,7 +86,7 @@ class Vuelo{
 		echo "<br> <u>Nombre Completo</u>: ". $pasajero->GetNombre() .", ". $pasajero->GetApellido() ." <u>DNI</u>: ". $pasajero->GetDni() ." <u>Es Plus</u>: ". $pasajero->GetEsPlus() . "<br>";
 		} 
 	
-	return;
+		return;
 	}
 
 
@@ -106,47 +104,40 @@ class Vuelo{
 
 				$totalrecaudado = $totalrecaudado + ($preciovuelo1 * 0.80);
 
-				echo $pasajerov1->GetNombre() . " ".  $totalrecaudado;
-
 			} else {
 
 				$totalrecaudado = $totalrecaudado + $preciovuelo1;
 
-				echo $pasajerov1->GetNombre() . " " . $totalrecaudado;
 			}
 		}
 
-		foreach ($vuelo2->_listaDePasajeros as $pasajeros){
+		foreach ($vuelo2->_listaDePasajeros as $pasajerov2){
 
-			if($pasajeros->GetEsPlus() == True){
+			if($pasajerov2->GetEsPlus() == True){
 
 				$totalrecaudado = $totalrecaudado + ($preciovuelo2 * 0.80);
-
-				echo $pasajeros->GetNombre() . " " . $totalrecaudado;
 
 			} else {
 
 				$totalrecaudado = $totalrecaudado + $preciovuelo2;
 
-				echo $pasajeros->GetNombre() . " " . $totalrecaudado;
-
 			}
 
-			return $totalrecaudado;
-
 		}
+
+		return $totalrecaudado;
 	}
 
 	//Crear el método de clase “Remove”, que permite quitar un pasajero de un vuelo, siempre y cuando el pasajero esté en dicho vuelo, caso contrario, informarlo. El método retornará un objeto de tipo Vuelo. 
 
 	static function Remove($vuelo,$pasajero){
 
-	$validar = FALSE;
-	$posicion = 0;
+		$validar = FALSE;
+		$posicion = 0;
 
 		foreach ($vuelo->_listaDePasajeros as $indice => $pasajerosenlista){
 
-		if	($pasajerosenlista->Equals($pasajero)){
+			if	($pasajerosenlista->Equals($pasajero)){
 
 			
 			$validar = TRUE;
@@ -154,18 +145,17 @@ class Vuelo{
 			unset($vuelo->_listaDePasajeros[$posicion]);
 
 			break;
-		}		
+			}		
 		}
 
-		if ($validar == TRUE){
+			if ($validar == TRUE){
 
 			echo "El pasajero ha sido removido exitosamente";
 
-		}else{
+			}else{
 
 			echo "No se encontró el pasajero en el vuelo";
-		}
-
+			}
 	}
 }
 

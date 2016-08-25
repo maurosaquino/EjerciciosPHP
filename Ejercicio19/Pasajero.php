@@ -27,12 +27,12 @@ class Pasajero{
 		return $this->_apellido;
 	}
 
-		function GetDni(){
+	function GetDni(){
 
 		return $this->_dni;
 	}
 
-		function GetEsPlus(){
+	function GetEsPlus(){
 
 		return $this->_esPlus;
 	}
@@ -48,10 +48,8 @@ class Pasajero{
 
 		} else {
 
-			echo "Los pasajeros " . $this->_nombre . ", ". $this->_apellido . " y " . $pasajero->_nombre . ", ". $pasajero->_apellido . " son distintos <br>";;
 			return FALSE;
 		}
-
 	}
 
 	//Agregar un método getter llamado GetInfoPasajero, que retornará una cadena de caracteres con los atributos concatenados del objeto.
@@ -61,7 +59,6 @@ class Pasajero{
 		$informacion =  "La informacion del pasajero es: <br> <u>Nombre  Completo:</u> " . $this->_apellido . " , " . $this->_nombre . " , <u>DNI</u>: ". $this->_dni . " <u>Es Plus</u>: " . $this->_esPlus;
 
 		return $informacion;
-
 	}
 
 	//Agregar un método de clase llamado MostrarPasajero que mostrará los atributos en la página.
