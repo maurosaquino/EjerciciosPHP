@@ -1,0 +1,71 @@
+body{
+
+	margin:0px;
+}
+
+
+#div1{
+
+	height:200px;
+	background-image: url(banner.png);
+	background-repeat: no-repeat;
+	background-size:100% 100%;
+	min-width: 1200px;
+	box-sizing: content-box;
+}
+
+table {
+margin: 8px;
+}
+
+th {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+background: #666;
+color: #FFF;
+padding: 2px 6px;
+border-collapse: separate;
+border: 1px solid #000;
+}
+
+td {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+border: 1px solid #DDD;
+}
+
+
+#f1{
+
+	background-color : lightblue;
+	border: 3px solid lightgrey;
+	padding:4px;
+	height: 200px;
+	width: 350px;
+	margin: auto;
+	color:white;
+	font-weight:bold;
+	font-family:Arial;
+	position: relative;
+	line-height: 27px;
+	border-radius: 4px;
+	background-image: url(http://ww1.aerolineas.com.ar/arg/images/laEmpresa/TopInfo.jpg);
+	}
+
+#f2{
+
+	height:19px;
+	width:100px;
+	float:right;
+	clear: right;
+}
+
+#f3{
+
+	height:21px;
+	width:80px;
+	float:center;
+	clear:center;
+}
+
+
